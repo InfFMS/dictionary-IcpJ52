@@ -3,3 +3,7 @@
 # Пример ввода
 # яблоки сливы груши персики манго киви апельсины
 # 34 56 23 89 55 32 11
+lst1 = input().split()
+lst2 = list(map(int, input().split()))
+dictionary = dict(zip(lst1, lst2))
+print(dictionary)

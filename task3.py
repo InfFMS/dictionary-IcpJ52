@@ -6,3 +6,9 @@
 # Абракадабра
 # Вывод
 # а-5 б-2 д-1 к-1 р-2
+s = input()
+s = s.replace(' ', '')
+s = s.lower()
+dct = {el: s.count(el) for el in sorted(list(set(s)))}
+for key, value in dct.items():
+    print(f'{key}-{value}', end=' ')
