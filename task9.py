@@ -15,3 +15,31 @@
 # 1. Поиск друзей (соседей) для заданного пользователя.
 # 2. Проверка, являются ли два пользователя друзьями (есть ли ребро между вершинами).
 # 3. Поиск изолированных пользователей (вершин без рёбер).
+friends_graph = {
+    "Анна": ["Борис", "Виктор", "Дарья"],
+    "Борис": ["Анна", "Виктор"],
+    "Виктор": ["Анна", "Борис", "Дарья"],
+    "Дарья": ["Анна", "Виктор", "Елена"],
+    "Елена": ["Дарья"]
+}
+
+
+def find_friends(name):
+    return friends_graph[name]
+
+
+def verify_friends(name1, name2):
+    return name1 in friends_graph[name2] and name2 in friends_graph[name1]
+
+
+def find_isolation():
+    isolated_persons = []
+    for person in friends_graph:
+        if len(friends_graph[person]) == 0:
+            isolated_persons.append(person)
+    return isolated_persons
+
+
+# print(find_friends("Анна"))
+# print(verify_friends("Анна", "Елена"))
+# print(find_isolation())
