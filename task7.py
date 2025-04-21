@@ -6,3 +6,15 @@
 # Первый словарь: {'a': 100, 'b': 200, 'c':300}
 # Второй словарь: {'a': 300, 'b': 200, 'd':400}
 # Результат: {'a': 400, 'b': 400, 'd': 400, 'c': 300}
+
+dict1 = {'a': 100, 'b': 200, 'c': 300}
+dict2 = {'a': 300, 'b': 200, 'd': 400}
+dct = dict()
+for key in dict1.keys() | dict2.keys():
+    if key in dict1 and key in dict2:
+        dct[key] = dict1[key] + dict2[key]
+    elif key in dict1:
+        dct[key] = dict1[key]
+    else:
+        dct[key] = dict2[key]
+print(dct)
